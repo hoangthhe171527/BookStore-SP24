@@ -5,12 +5,15 @@
 package dal;
 
 import java.sql.*;
+
 /**
  *
- * @author Admin
+ * @author ADMIN
  */
 public class DBContext {
+
     protected Connection connection;
+
     /**
      * get an connection
      *
