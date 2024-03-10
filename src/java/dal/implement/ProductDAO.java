@@ -35,6 +35,7 @@ public class ProductDAO extends GenericDAO<Product> {
                 + "      ,[price]\n"
                 + "      ,[description]\n"
                 + "      ,[categoryId]\n"
+                + "      ,[cateDetailsId]\n"
                 + "  FROM [dbo].[Product]\n"
                 + "  where id = ?";
         parameterMap = new LinkedHashMap<>();
@@ -132,8 +133,9 @@ public class ProductDAO extends GenericDAO<Product> {
                 + "      ,[price] = ?\n"
                 + "      ,[description] = ?\n"
                 + "      ,[categoryId] = ?\n"
+                + "      ,[cateDetailsId] = ?\n"
                 + " WHERE id = ?";
-        
+
         parameterMap = new LinkedHashMap<>();
         parameterMap.put("name", product.getName());
         parameterMap.put("image", product.getImage());
@@ -141,9 +143,63 @@ public class ProductDAO extends GenericDAO<Product> {
         parameterMap.put("price", product.getPrice());
         parameterMap.put("description", product.getDescription());
         parameterMap.put("categoryId", product.getCategoryId());
+        parameterMap.put("cateDetailsId", product.getCateDetailsId());
         parameterMap.put("id", product.getId());
-        
+
         updateGenericDAO(sql, parameterMap);
+    }
+
+    public int findTotalRecordByCategoryDetails(String categoryDetailsId) {
+        String sql = "SELECT count(*)\n"
+                + "FROM [dbo].[Product]\n"
+                + "WHERE cateDetailsId = ?";
+        parameterMap = new LinkedHashMap<>();
+        parameterMap.put("categoryDetailsId", categoryDetailsId);
+        return findTotalRecordGenericDAO(Product.class, sql, parameterMap);
+    }
+
+    public List<Product> findByCategoryDetails(String cateDetailsId, int page) {
+        String sql = "SELECT *\n"
+                + "FROM [dbo].[Product]\n"
+                + "WHERE cateDetailsId = ?\n"
+                + "ORDER BY id\n"
+                + "OFFSET ? ROWS\n"
+                + // (page - 1)*y
+                "FETCH NEXT ? ROWS ONLY"; // number record per page
+
+        parameterMap = new LinkedHashMap<>();
+        parameterMap.put("cateDetailsId", cateDetailsId);
+        parameterMap.put("offset", (page - 1) * CommonConst.RECORD_PER_PAGE);
+        parameterMap.put("fetch", CommonConst.RECORD_PER_PAGE);
+
+        return queryGenericDAO(Product.class, sql, parameterMap);
+    }
+
+    public int findTotalRecordByPrice(double minPrice, double maxPrice) {
+        String sql = "SELECT count(*)\n"
+                + "FROM [dbo].[Product]\n"
+                + "WHERE price >= ? AND price <= ?";
+        parameterMap = new LinkedHashMap<>();
+        parameterMap.put("minPrice", minPrice);
+        parameterMap.put("maxPrice", maxPrice);
+        return findTotalRecordGenericDAO(Product.class, sql, parameterMap);
+    }
+
+    public List<Product> findByPrice(double minPrice, double maxPrice, int page) {
+        String sql = "SELECT *\n"
+                + "FROM [dbo].[Product]\n"
+                + "WHERE price >= ? AND price <= ?\n"
+                + "ORDER BY id\n"
+                + "OFFSET ? ROWS\n"
+                + "FETCH NEXT ? ROWS ONLY";
+
+        parameterMap = new LinkedHashMap<>();
+        parameterMap.put("minPrice", minPrice);
+        parameterMap.put("maxPrice", maxPrice);
+        parameterMap.put("offset", (page - 1) * CommonConst.RECORD_PER_PAGE);
+        parameterMap.put("fetch", CommonConst.RECORD_PER_PAGE);
+
+        return queryGenericDAO(Product.class, sql, parameterMap);
     }
 
 }

@@ -3,7 +3,7 @@
     Created on : Feb 25, 2024, 3:01:24 PM
     Author     : Admin
 --%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <div class="mobile-menu-area d-lg-none d-block fix">
     <div class="container">
@@ -12,40 +12,25 @@
                 <div class="mobile-menu">
                     <nav id="mobile-menu-active">
                         <ul id="nav">
-                            <li><a href="index.html">Home</a>
-                                <ul>
-                                    <li><a href="index.html">Home-1</a></li>
-                                    <li><a href="index-2.html">Home-2</a></li>
-                                    <li><a href="index-3.html">Home-3</a></li>
-                                    <li><a href="index-4.html">Home-4</a></li>
-                                    <li><a href="index-5.html">Home-5</a></li>
-                                    <li><a href="index-6.html">Home-6</a></li>
-                                    <li><a href="index-7.html">Home-7</a></li>
-                                </ul>
+                            <li class="active"><a href="${pageContext.request.contextPath}/home">Home<i class="fa fa-angle-down"></i></a>
+
                             </li>
-                            <li><a href="product-details.html">Book</a>
-                                <ul>
-                                    <li><a href="shop.html">Tops & Tees</a></li>
-                                    <li><a href="shop.html">Polo Short Sleeve</a></li>
-                                    <li><a href="shop.html">Graphic T-Shirts</a></li>
-                                    <li><a href="shop.html">Jackets & Coats</a></li>
-                                    <li><a href="shop.html">Fashion Jackets</a></li>
-                                    <li><a href="shop.html">Crochet</a></li>
-                                    <li><a href="shop.html">Sleeveless</a></li>
-                                    <li><a href="shop.html">Stripes</a></li>
-                                    <li><a href="shop.html">Sweaters</a></li>
-                                    <li><a href="shop.html">hoodies</a></li>
-                                    <li><a href="shop.html">Heeled sandals</a></li>
-                                    <li><a href="shop.html">Polo Short Sleeve</a></li>
-                                    <li><a href="shop.html">Flat sandals</a></li>
-                                    <li><a href="shop.html">Short Sleeve</a></li>
-                                    <li><a href="shop.html">Long Sleeve</a></li>
-                                    <li><a href="shop.html">Polo Short Sleeve</a></li>
-                                    <li><a href="shop.html">Sleeveless</a></li>
-                                    <li><a href="shop.html">Graphic T-Shirts</a></li>
-                                    <li><a href="shop.html">Hoodies</a></li>
-                                    <li><a href="shop.html">Jackets</a></li>
-                                </ul>
+                            <li><a href="product-details.html">Book<i class="fa fa-angle-down"></i></a>
+
+                                <div class="mega-menu">
+                                    <c:forEach items="${listCategory}" var="cate">
+                                        <span>
+                                            <a href="home?search=category&categoryId=${cate.id}" class="title">${cate.name}</a>
+                                            <c:forEach items="${listCateDetail}" var="d">
+                                                <c:if test="${cate.id == d.categoryId}">
+                                                    <a href="home?search=categoryDetails&categoryDetailsId=${d.id}">${d.name}</a>
+                                                </c:if>
+                                            </c:forEach>
+                                        </span>
+                                    </c:forEach>
+
+                                </div>
+
                             </li>
                             <li><a href="product-details.html">Audio books</a>
                                 <ul>

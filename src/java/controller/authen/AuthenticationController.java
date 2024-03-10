@@ -39,6 +39,9 @@ public class AuthenticationController extends HttpServlet {
             case "log-out":
                 url = logOut(request,response);
                 break;
+            case "sign-up":
+                url = "view/authen/register.jsp";
+                break;
             default:
                 url = "home";
         }
@@ -65,6 +68,9 @@ public class AuthenticationController extends HttpServlet {
         switch (action) {
             case "login":
                 url = loginDoPost(request,response);
+                break;
+            case "sign-up":
+                url = signUp(request,response);
                 break;
             
             default:
@@ -104,6 +110,31 @@ public class AuthenticationController extends HttpServlet {
     private String logOut(HttpServletRequest request, HttpServletResponse response) {
         request.getSession().removeAttribute(CommonConst.SESSION_ACCOUNT);
         return "home";
+    }
+
+    private String signUp(HttpServletRequest request, HttpServletResponse response) {
+        String url = null;
+        // get ve thong tin nguoi dung nhap
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        // ktra xem user name ton tai trong db chua
+        Account account = Account.builder()
+                .username(username)
+                .password(password)
+                .build();
+        boolean isUsernameExist = accountDAO.checkUsernameExist(account);
+        // true => quay tro lai trang register(set thong bao loi )
+        if(isUsernameExist){
+            request.setAttribute("error", "Username exist!");
+            url = "view/authen/register.jsp";
+        }
+        // false => quay tro lai trang home ( ghi tai khoan vao trong db )
+        else {
+            accountDAO.insert(account);
+            url = "home";
+        }
+        return url;
+     
     }
 
 }

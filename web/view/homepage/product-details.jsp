@@ -1,5 +1,6 @@
 
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <html class="no-js" lang="en">
@@ -54,23 +55,23 @@
                 <!-- mobile-menu-area-start -->
             <jsp:include page="../common/homepage/mobile-menu-area.jsp"></jsp:include>
                 <!-- mobile-menu-area-end -->
-        </header>
+            </header>
             <!-- breadcrumbs-area-start -->
-            <jsp:include page="../common/homepage/breadcrumbs-area.jsp"></jsp:include>
+        <jsp:include page="../common/homepage/breadcrumbs-area.jsp"></jsp:include>
             <!-- breadcrumbs-area-end -->
-        <!-- product-main-area-start -->
-        <div class="product-main-area mb-70">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-9 col-md-12 col-12 order-lg-1 order-1">
-                        <!-- product-main-area-start -->
-                        <div class="product-main-area">
-                            <div class="row">
-                                <div class="col-lg-5 col-md-6 col-12">
-                                    <div class="flexslider">
-                                        <ul class="slides">
-                                            <li data-thumb="${pageContext.request.contextPath}/img/thum-2/1.jpg">
-                                                <img src="${pageContext.request.contextPath}/img/flex/1.jpg" alt="woman" />
+            <!-- product-main-area-start -->
+            <div class="product-main-area mb-70">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-9 col-md-12 col-12 order-lg-1 order-1">
+                            <!-- product-main-area-start -->
+                            <div class="product-main-area">
+                                <div class="row">
+                                    <div class="col-lg-5 col-md-6 col-12">
+                                        <div class="flexslider">
+                                            <ul class="slides">
+                                                <li data-thumb="${pageContext.request.contextPath}/img/thum-2/1.jpg">
+                                                <img src="${product.image}" alt="woman" />
                                             </li>
                                         </ul>
                                     </div>
@@ -344,144 +345,26 @@
                                 <div class="product-active-2 owl-carousel">
                                     <div class="product-total-2">
                                         <div class="single-most-product bd mb-18">
-                                            <div class="most-product-img">
-                                                <a href="#"><img src="${pageContext.request.contextPath}/img/product/20.jpg" alt="book" /></a>
-                                            </div>
-                                            <div class="most-product-content">
-                                                <div class="product-rating">
-                                                    <ul>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    </ul>
+                                            <c:forEach items="${listProduct}" var="p">
+                                                
+                                                <div class="most-product-img">
+                                                    <a href="#"><img src="${p.image}" alt="book" /></a>
                                                 </div>
-                                                <h4><a href="#">Endeavor Daytrip</a></h4>
-                                                <div class="product-price">
-                                                    <ul>
-                                                        <li>$30.00</li>
-                                                        <li class="old-price">$33.00</li>
-                                                    </ul>
+                                                <div class="most-product-content">
+                                                    
+                                                    <h4><a href="#">${p.name}</a></h4>
+                                                    <div class="product-price">
+                                                        <ul>
+                                                            <li>${p.price}$</li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
-                                            </div>
+                                                
+                                            </c:forEach>
                                         </div>
-                                        <div class="single-most-product bd mb-18">
-                                            <div class="most-product-img">
-                                                <a href="#"><img src="${pageContext.request.contextPath}/img/product/21.jpg" alt="book" /></a>
-                                            </div>
-                                            <div class="most-product-content">
-                                                <div class="product-rating">
-                                                    <ul>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                                <h4><a href="#">${product.name}</a></h4>
-                                                <div class="product-price">
-                                                    <ul>
-                                                        <li>$30.00</li>
-                                                        <li class="old-price">$35.00</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="single-most-product">
-                                            <div class="most-product-img">
-                                                <a href="#"><img src="${pageContext.request.contextPath}/img/product/22.jpg" alt="book" /></a>
-                                            </div>
-                                            <div class="most-product-content">
-                                                <div class="product-rating">
-                                                    <ul>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                                <h4><a href="#">Compete Track Tote</a></h4>
-                                                <div class="product-price">
-                                                    <ul>
-                                                        <li>$35.00</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        
                                     </div>
-                                    <div class="product-total-2">
-                                        <div class="single-most-product bd mb-18">
-                                            <div class="most-product-img">
-                                                <a href="#"><img src="${pageContext.request.contextPath}/img/product/23.jpg" alt="book" /></a>
-                                            </div>
-                                            <div class="most-product-content">
-                                                <div class="product-rating">
-                                                    <ul>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                                <h4><a href="#">Voyage Yoga Bag</a></h4>
-                                                <div class="product-price">
-                                                    <ul>
-                                                        <li>$30.00</li>
-                                                        <li class="old-price">$33.00</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="single-most-product bd mb-18">
-                                            <div class="most-product-img">
-                                                <a href="#"><img src="${pageContext.request.contextPath}/img/product/24.jpg" alt="book" /></a>
-                                            </div>
-                                            <div class="most-product-content">
-                                                <div class="product-rating">
-                                                    <ul>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                                <h4><a href="#">Impulse Duffle</a></h4>
-                                                <div class="product-price">
-                                                    <ul>
-                                                        <li>$70.00</li>
-                                                        <li class="old-price">$74.00</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="single-most-product">
-                                            <div class="most-product-img">
-                                                <a href="#"><img src="${pageContext.request.contextPath}/img/product/22.jpg" alt="book" /></a>
-                                            </div>
-                                            <div class="most-product-content">
-                                                <div class="product-rating">
-                                                    <ul>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                                <h4><a href="#">Fusion Backpack</a></h4>
-                                                <div class="product-price">
-                                                    <ul>
-                                                        <li>$59.00</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>	
+                                    	
                                 </div>
                             </div>
                             <div class="banner-area mb-30">
@@ -505,21 +388,21 @@
         <!-- product-main-area-end -->
         <!-- footer-area-start -->
         <jsp:include page="../common/homepage/footer.jsp"></jsp:include>
-        <!-- footer-area-end -->
-        <!-- Modal -->
-        <div class="modal fade" id="productModal" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-5 col-sm-5 col-xs-12">
-                                <div class="modal-tab">
-                                    <div class="product-details-large tab-content">
-                                        <div class="tab-pane active" id="image-1">
-                                            <img src="${pageContext.request.contextPath}/img/product/quickview-l4.jpg" alt="" />
+            <!-- footer-area-end -->
+            <!-- Modal -->
+            <div class="modal fade" id="productModal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-5 col-sm-5 col-xs-12">
+                                    <div class="modal-tab">
+                                        <div class="product-details-large tab-content">
+                                            <div class="tab-pane active" id="image-1">
+                                                <img src="${pageContext.request.contextPath}/img/product/quickview-l4.jpg" alt="" />
                                         </div>
                                         <div class="tab-pane" id="image-2">
                                             <img src="${pageContext.request.contextPath}/img/product/quickview-l2.jpg" alt="" />

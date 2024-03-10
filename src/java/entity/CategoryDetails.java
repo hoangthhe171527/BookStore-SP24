@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package entity;
 
 import lombok.AllArgsConstructor;
@@ -8,6 +12,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+/**
+ *
+ * @author Admin
+ */
 @ToString
 @Builder
 @Data
@@ -15,14 +23,8 @@ import lombok.ToString;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Product {
-
+public class CategoryDetails {
     private int id;
     private String name;
-    private String image;
-    private int quantity;
-    private float price;
-    private String description;
     private int categoryId;
-    private int cateDetailsId;
 }

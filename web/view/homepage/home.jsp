@@ -59,7 +59,7 @@
                 <!-- mobile-menu-area-start -->
             <jsp:include page="../common/homepage/mobile-menu-area.jsp"></jsp:include>
                 <!-- mobile-menu-area-end -->
-        </header>
+            </header>
             <!-- header-area-end -->
             <!-- breadcrumbs-area-start -->
         <jsp:include page="../common/homepage/breadcrumbs-area.jsp"></jsp:include>
@@ -79,37 +79,24 @@
                                 <div class="left-menu mb-30">
                                     <ul>
                                     <c:forEach items="${listCategory}" var="cate">
-                                        <li><a href="home?search=category&categoryId=${cate.id}">${cate.name}<span></span></a></li>
-                                    </c:forEach>
+                                        <li><a href="home?search=category&categoryId=${cate.id}">${cate.name}</a></li>
+                                        </c:forEach>
                                 </ul>
                             </div>
-                            
-                            <div class="left-title mb-20">
-                                <h4>Manufacturer</h4>
-                            </div>
-                            <div class="left-menu mb-30">
-                                <ul>
-                                    <li><a href="#">Adidas<span>(4)</span></a></li>
-                                    <li><a href="#">Chanel<span>(7)</span></a></li>
-                                    <li><a href="#">DKNY <span>(3)</span></a></li>
-                                    <li><a href="#">Dolce<span>(3)</span></a></li>
-                                    <li><a href="#">Gabbana<span>(2)</span></a></li>
-                                    <li><a href="#">Nike<span>(3)</span></a></li>
-                                    <li><a href="#">Other <span>(1)</span></a></li>
-                                </ul>
-                            </div>
+
                             <div class="left-title mb-20">
                                 <h4>Price</h4>
                             </div>
                             <div class="left-menu mb-30">
                                 <ul>
-                                    <li><a href="#">$0.00-$9.99<span>(1)</span></a></li>
-                                    <li><a href="#">$30.00-$39.99<span>(11)</span></a></li>
-                                    <li><a href="#">$40.00-$49.99<span>(2)</span></a></li>
-                                    <li><a href="#">$50.00-$59.99<span>(3)</span></a></li>
-                                    <li><a href="#">$70.00-and above<span>(1)</span></a></li>
+                                    <li><a href="home?search=price&minPrice=0&maxPrice=9.99">$0.00-$9.99<span></span></a></li>
+                                    <li><a href="home?search=price&minPrice=30.00&maxPrice=39.99">$30.00-$39.99<span></span></a></li>
+                                    <li><a href="home?search=price&minPrice=40.00&maxPrice=49.99">$40.00-$49.99<span></span></a></li>
+                                    <li><a href="home?search=price&minPrice=50.00&maxPrice=59.99">$50.00-$59.99<span></span></a></li>
+                                    <li><a href="home?search=price&minPrice=70.00&maxPrice=1000.00">$70.00-and above<span></span></a></li>
                                 </ul>
                             </div>
+
                             <div class="left-title mb-20">
                                 <h4>Random</h4>
                             </div>
@@ -139,31 +126,31 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        
+
                                     </div>
                                     <div class="single-most-product bd mb-18">
-                                            <div class="most-product-img">
-                                                <a href="#"><img src="${pageContext.request.contextPath}/img/product/1.jpg" alt="book" /></a>
+                                        <div class="most-product-img">
+                                            <a href="#"><img src="${pageContext.request.contextPath}/img/product/1.jpg" alt="book" /></a>
+                                        </div>
+                                        <div class="most-product-content">
+                                            <div class="product-rating">
+                                                <ul>
+                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                </ul>
                                             </div>
-                                            <div class="most-product-content">
-                                                <div class="product-rating">
-                                                    <ul>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                                <h4><a href="#">Endeavor Daytrip</a></h4>
-                                                <div class="product-price">
-                                                    <ul>
-                                                        <li>$30.00</li>
-                                                        <li class="old-price">$33.00</li>
-                                                    </ul>
-                                                </div>
+                                            <h4><a href="#">Endeavor Daytrip</a></h4>
+                                            <div class="product-price">
+                                                <ul>
+                                                    <li>$30.00</li>
+                                                    <li class="old-price">$33.00</li>
+                                                </ul>
                                             </div>
                                         </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="banner-area mb-30">
@@ -182,8 +169,9 @@
                         </div>
                     </div>
                     <div class="col-lg-9 col-md-12 col-12 order-lg-2 order-1">
+                        <!-- banner -->
                         <div class="category-image mb-30">
-                            <a href="#"><img src="${pageContext.request.contextPath}/img/banner/32.jpg" alt="banner" /></a>
+                            <a href="#"><img src="${pageContext.request.contextPath}/img/banner/banner-2.png" alt="banner" /></a>
                         </div>
                         <div class="section-title-5 mb-30">
                             <h2>Book</h2>
@@ -193,28 +181,14 @@
                                 <div class="tab-3">
                                     <ul class="nav">
                                         <li><a class="active" href="#th" data-bs-toggle="tab"><i class="fa fa-th-large"></i>Grid</a></li>
-                                        <li><a href="#list" data-bs-toggle="tab"><i class="fa fa-bars"></i>List</a></li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="field-limiter">
-                                <div class="control">
-                                    <span>Show</span>
-                                    <!-- chosen-start -->
-                                    <select data-placeholder="Default Sorting" style="width:50px;" class="chosen-select" tabindex="1">
-                                        <option value="Sorting">1</option>
-                                        <option value="popularity">2</option>
-                                        <option value="rating">3</option>
-                                        <option value="date">4</option>
-                                    </select>
-                                    <!-- chosen-end -->
-                                </div>
-                            </div>
+                            
                             <div class="toolbar-sorter">
                                 <span>Sort By</span>
                                 <select id="sorter" class="sorter-options" data-role="sorter">
-                                    <option selected="selected" value="position"> Position </option>
-                                    <option value="name"> Product Name </option>
+                                    <option selected="selected" value="name"> Product Name </option>
                                     <option value="price"> Price </option>
                                 </select>
                                 <a href="#"><i class="fa fa-arrow-up"></i></a>
@@ -228,10 +202,11 @@
                                         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
                                             <!-- single-product-start -->
                                             <div class="product-wrapper mb-40">
-                                                <div class="product-img">
-                                                    <a href="product-details?id=${p.id}">
-                                                        <img src="${pageContext.request.contextPath}/img/product/1.jpg" alt="book" class="primary" />
+                                                <div class="product-img" >
+                                                    <a href="product-details?id=${p.id}" >
+                                                        <img src="${p.image}" style="display: inline-block; width: 192px; height: 230px;" alt="book" class="primary" />
                                                     </a>
+
                                                     <div class="quick-view">
                                                         <a class="action-view" href="#" data-bs-target="#productModal" data-bs-toggle="modal" title="Quick View">
                                                             <i class="fa fa-search-plus"></i>
@@ -242,7 +217,7 @@
                                                     <h4><a href="#">${p.name}</a></h4>
                                                     <div class="product-price">
                                                         <ul>
-                                                            <li>$60.00</li>
+                                                            <li>${p.price}$</li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -269,9 +244,9 @@
                             <div class="page-number">
                                 <ul>
                                     <c:forEach begin="1" end="${pageControl.totalPage}" var="pageNumber">
-                                    <!--<li><a href="#" class="active">1</a></li>-->
-                                    <li><a href="${pageControl.urlPattern}page=${pageNumber}">${pageNumber}</a></li>
-                                    </c:forEach>
+                                        <!--<li><a href="#" class="active">1</a></li>-->
+                                        <li><a href="${pageControl.urlPattern}page=${pageNumber}">${pageNumber}</a></li>
+                                        </c:forEach>
                                     <li><a href="#" class="angle"><i class="fa fa-angle-right"></i></a></li>
                                 </ul>
                             </div>
