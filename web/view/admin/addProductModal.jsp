@@ -48,6 +48,20 @@
                             </div>
                         </div>
                     </div>
+                    <!--Category details-->
+                    <div class="form-group">
+                        <label for="category">Category Details: </label>
+                        <div class="input-group">
+                            <select class="custom-select" id="categoryDetail" name="categoryDetail">
+                                <c:forEach items="${listCateDetail}" var="lc">
+                                    <option value="${lc.id}">${lc.name}</option>
+                                </c:forEach>
+                            </select>
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button">Category Details</button>
+                            </div>
+                        </div>
+                    </div>
                     <!--Image-->
                     <div class="form-group">
                         <label for="image">Image: </label>

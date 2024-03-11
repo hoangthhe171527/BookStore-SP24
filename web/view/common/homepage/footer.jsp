@@ -83,15 +83,15 @@
                 <div class="col-lg-4 col-md-12">
                     <div class="single-footer mrg-sm">
                         <div class="footer-title mb-20">
-                            <h3>STORE INFORMATION</h3>
+                            <h3>Honag Information</h3>
                         </div>
                         <div class="footer-contact">
                             <p class="adress">
-                                <span>My Company</span>
+                                <span>Honag Company</span>
                                 Your address goes here.
                             </p>
-                            <p><span>Call us now:</span> 0123456789</p>
-                            <p><span>Email:</span> demo@example.com</p>
+                            <p><span>Call us now:</span> 0342885569</p>
+                            <p><span>Email:</span> hoangthhe171527@fpt.edu.vn</p>
                         </div>
                     </div>
                 </div>
@@ -105,7 +105,7 @@
             <div class="row bt-2">
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="copy-right-area">
-                        <p>&copy; 2022 <strong> Koparion </strong> Mede with ❤️ by <a href="https://hasthemes.com/" target="_blank"><strong>HasThemes</strong></a></p>
+                        <p><strong> Honag Store </strong> with ❤️  </a></p>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-12">

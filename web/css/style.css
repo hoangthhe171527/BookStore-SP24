@@ -90,7 +90,7 @@ button:focus {
 }
 
 img {
-    max-width: 100%;
+    max-width: 110%;
     height: auto;
 }
 
@@ -598,7 +598,7 @@ body {
 }
 
 .header-search form a {
-    background: #f07c29 none repeat scroll 0 0;
+    background: #666 none repeat scroll 0 0;
     color: #fff;
     display: inline-block;
     font-size: 18px;
@@ -4333,7 +4333,6 @@ nav.menu .cr-dropdown ul {
 }
 
 .left-menu ul li a:before {
-    content: "";
     display: inline-block;
     font-family: "FontAwesome";
     font-size: 16px;

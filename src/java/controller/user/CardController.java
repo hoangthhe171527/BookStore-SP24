@@ -7,6 +7,7 @@ package controller.user;
 import constant.CommonConst;
 import dal.implement.OrderDAO;
 import dal.implement.OrderDetailsDAO;
+import dal.implement.ProductDAO;
 import entity.Account;
 import entity.Order;
 import entity.OrderDetails;
@@ -178,7 +179,7 @@ public class CardController extends HttpServlet {
         // get list product
         List<Product> list = (List<Product>) session.getAttribute(CommonConst.SESSION_PRODUCT);
         // amount
-        int amount = calculateAmount(cart,list);
+        int amount = calculateAmount(cart, list);
         // insert order
         // set information
         cart.setAccountId(accountId);
@@ -193,9 +194,23 @@ public class CardController extends HttpServlet {
             odDAO.insert(obj);
         }
         // tru di so luong san pham o trong csdl
+        ProductDAO productDAO = new ProductDAO();
+        for (OrderDetails orderDetails : cart.getListOrderDetails()) {
+            // Lấy thông tin sản phẩm từ danh sách sản phẩm
+            Product product = list.stream()
+                    .filter(p -> p.getId() == orderDetails.getProductId())
+                    .findFirst()
+                    .orElse(null);
+            if (product != null) {
+                // Trừ đi số lượng sản phẩm đã mua
+                product.setQuantity(product.getQuantity() - orderDetails.getQuantity());
+                // Cập nhật thông tin sản phẩm trong cơ sở dữ liệu
+                productDAO.update(product);
+            }
+            //remove
+            session.removeAttribute("cart");
+        }
 
-        //remove
-        session.removeAttribute("cart");
     }
 
     private int calculateAmount(Order cart, List<Product> list) {

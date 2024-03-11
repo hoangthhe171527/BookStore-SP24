@@ -202,4 +202,5 @@ public class ProductDAO extends GenericDAO<Product> {
         return queryGenericDAO(Product.class, sql, parameterMap);
     }
 
+
 }

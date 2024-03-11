@@ -25,6 +25,7 @@ public class HomeController extends HttpServlet {
     ProductDAO productDAO = new ProductDAO();
     CategoryDAO categoryDao = new CategoryDAO();
     CateDetailsDAO cateDetailsDAO = new CateDetailsDAO();
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -39,8 +40,10 @@ public class HomeController extends HttpServlet {
         HttpSession session = request.getSession();
         session.setAttribute(CommonConst.SESSION_PRODUCT, listProduct);
         session.setAttribute(CommonConst.SESSION_CATEGORY, listCategory);
-        session.setAttribute(CommonConst.SESSION_CATEGORYDETAILS,listCateDetail);
+        session.setAttribute(CommonConst.SESSION_CATEGORYDETAILS, listCateDetail);
         request.setAttribute("pageControl", pageControl);
+
+
         request.getRequestDispatcher("view/homepage/home.jsp").forward(request, response);
     }
 

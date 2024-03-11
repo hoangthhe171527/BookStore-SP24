@@ -12,10 +12,9 @@
                 <div class="menu-area">
                     <nav>
                         <ul>
-                            <li class="active"><a href="${pageContext.request.contextPath}/home">Home<i class="fa fa-angle-down"></i></a>
-
+                            <li><a href="${pageContext.request.contextPath}/home">Home<i class="fa fa-angle-down"></i></a>
                             </li>
-                            <li><a href="product-details.html">Book<i class="fa fa-angle-down"></i></a>
+                            <li><a href="product-details.html" href="${pageContext.request.contextPath}/home">Book<i class="fa fa-angle-down"></i></a>
 
                                 <div class="mega-menu">
                                     <c:forEach items="${listCategory}" var="cate">

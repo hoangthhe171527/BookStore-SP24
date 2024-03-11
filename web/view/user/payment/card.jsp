@@ -135,7 +135,7 @@
                         <div class="buttons-cart mb-30">
                             <form action="action">
                                 <ul>
-                                    <li><a href="#">Continue Shopping</a></li>
+                                    <li><a href="${pageContext.request.contextPath}/home">Continue Shopping</a></li>
                                 </ul>
                             </form>
                         </div>

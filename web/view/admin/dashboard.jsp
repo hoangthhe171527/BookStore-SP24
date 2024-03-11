@@ -75,6 +75,7 @@
                                                 <th>Quantity</th>
                                                 <th>Price</th>
                                                 <th>Category</th>
+                                                <th>Category Details</th>
                                                 <th>Description</th>
                                                 <th>Action</th>
                                             </tr>
@@ -96,6 +97,15 @@
                                                         </c:if>
                                                     </c:forEach>
                                                 </td>
+                                                <td name="categoryDetails">
+                                                    
+                                                        <c:forEach items="${listCateDetail}" var="lc">
+                                                            <c:if test="${p.cateDetailsId == lc.id}">
+                                                                ${lc.name}
+                                                            </c:if>
+                                                        </c:forEach>
+                                                    
+                                                </td>
                                                 <td name="description">${p.description}</td>
                                                 <td>
                                                     <button type="button" class="btn btn-primary"
@@ -103,7 +113,7 @@
                                                             onclick="editProductModal(this)">
                                                         Edit</button>
 
-                                                    
+
                                                     <button type="button" class="btn btn-danger"
                                                             data-toggle="modal" data-target="#delete-product-modal"
                                                             onclick="deleteProductModal(${p.id})">

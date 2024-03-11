@@ -115,6 +115,8 @@ public class ProductAdminServlet extends HttpServlet {
             String description = request.getParameter("description");
             // get categoryId
             int categoryId = Integer.parseInt(request.getParameter("category"));
+            // get cateDetailsID
+            int cateDetailsId = Integer.parseInt(request.getParameter("categoryDetail"));
 
             // image
             Part part = request.getPart("image");
@@ -144,6 +146,7 @@ public class ProductAdminServlet extends HttpServlet {
                     .quantity(quantity)
                     .categoryId(categoryId)
                     .description(description)
+                    .cateDetailsId(cateDetailsId)
                     .image(imagePath)
                     .build();
             pdao.insert(product);
@@ -175,7 +178,8 @@ public class ProductAdminServlet extends HttpServlet {
             String description = request.getParameter("description");
             // get categoryId
             int categoryId = Integer.parseInt(request.getParameter("category"));
-            
+            // get cateDetailsID
+            int cateDetailsId = Integer.parseInt(request.getParameter("categoryDetail"));
             // image
             Part part = request.getPart("image");
             String imagePath = null;
@@ -205,6 +209,7 @@ public class ProductAdminServlet extends HttpServlet {
                     .price(price)
                     .description(description)
                     .categoryId(categoryId)
+                    .cateDetailsId(cateDetailsId)
                     .image(imagePath)
                     .build();
             

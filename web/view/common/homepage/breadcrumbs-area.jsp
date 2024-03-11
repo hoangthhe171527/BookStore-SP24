@@ -1,6 +1,6 @@
 <%-- 
     Document   : breadcrumbs-area
-    Created on : Feb 25, 2024, 3:02:30 PM
+    Created on : Mar 11, 2024, 9:50:15 PM
     Author     : Admin
 --%>
 
@@ -11,8 +11,7 @@
             <div class="col-lg-12">
                 <div class="breadcrumbs-menu">
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#" class="active">shop</a></li>
+                        
                     </ul>
                 </div>
             </div>
