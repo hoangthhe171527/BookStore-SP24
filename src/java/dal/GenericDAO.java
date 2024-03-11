@@ -234,7 +234,10 @@ public abstract class GenericDAO<T> extends DBContext {
             return rs.getFloat(fieldName);
         } else if (fieldType == Timestamp.class) {
             return rs.getTimestamp(fieldName);
-        } else {
+        } else if (fieldType == Timestamp.class){
+            return rs.getTimestamp(fieldName);
+        }
+        else {
             return rs.getObject(fieldName);
         }
     }
