@@ -204,7 +204,7 @@
                                             <div class="product-wrapper mb-40">
                                                 <div class="product-img" >
                                                     <a href="product-details?id=${p.id}" >
-                                                        <img src="${p.image}" style="display: inline-block; width: 192px; height: 230px;" alt="book" class="primary" />
+                                                        <img src="${p.image}" style="display: inline-block; width: 192px; height: 192px;" alt="book" class="primary" />
                                                     </a>
 
                                                     <div class="quick-view">

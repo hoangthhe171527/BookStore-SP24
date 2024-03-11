@@ -1569,17 +1569,14 @@ body {
 
 .product-price ul li {
     display: inline-block;
-    color: #f07c29;
+    color: #2f3033;
     font-size: 20px;
     font-weight: 600;
-    font-family: 'Rufina', serif;
-    font-style: italic;
 }
 
 .product-price ul li span {
     color: #666;
     padding-right: 5px;
-    font-family: 'Rufina', serif;
     font-weight: 400;
     font-size: 16px;
 }
@@ -4320,7 +4317,7 @@ nav.menu .cr-dropdown ul {
 .left-menu ul li a {
     color: #333;
     display: block;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 400;
     line-height: 26px;
     padding: 10px 0;

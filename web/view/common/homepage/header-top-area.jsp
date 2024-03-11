@@ -58,7 +58,7 @@
                         </c:if>
                         <c:if test="${account != null}">
                             <li>
-                                <a href="authen?action=log-out">Sign Out</a>
+                                <a href="${pageContext.request.contextPath}/authen?action=log-out">Sign Out</a>
                             </li>
                         </c:if>
                     </ul>
