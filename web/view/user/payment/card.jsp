@@ -143,10 +143,10 @@
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="cart_totals">
                             <h2>Cart Totals</h2>
-                            
+
                             <br/>
                             <table>
-                                
+
                                 <tbody>
                                     <tr class="cart-subtotal">
                                         <th>Subtotal</th>
@@ -221,18 +221,18 @@
         <script src="${pageContext.request.contextPath}/js/main.js"></script>
 
         <script>
-                                                        window.onload = updateSubTotal();
+                                        window.onload = updateSubTotal();
 
-                                                        function updateSubTotal() {
-                                                            let totalPriceOfEachProduct = document.querySelectorAll('td.product-subtotal');
-                                                            let totalCart = 0;
-                                                            totalPriceOfEachProduct.forEach(e => {
-                                                                let totalPrice = parseFloat(e.textContent.trim());
-                                                                totalCart += totalPrice;
-                                                            });
-                                                            document.querySelector('#subtotal').innerHTML = totalCart + "$";
-                                                            document.querySelector('#totalCart').innerHTML = totalCart + "$";
-                                                        }
+                                        function updateSubTotal() {
+                                            let totalPriceOfEachProduct = document.querySelectorAll('td.product-subtotal');
+                                            let totalCart = 0;
+                                            totalPriceOfEachProduct.forEach(e => {
+                                                let totalPrice = parseFloat(e.textContent.trim());
+                                                totalCart += totalPrice;
+                                            });
+                                            document.querySelector('#subtotal').innerHTML = totalCart + "$";
+                                            document.querySelector('#totalCart').innerHTML = totalCart + "$";
+                                        }
         </script>
     </body>
 
