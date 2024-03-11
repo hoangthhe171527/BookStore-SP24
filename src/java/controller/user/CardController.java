@@ -64,6 +64,9 @@ public class CardController extends HttpServlet {
             case "change-quantity":
                 changeQuantity(request,response);
                 break;
+            case "delete":
+                delete(request,response);
+                break;
             default:
                 throw new AssertionError();
         }
@@ -137,6 +140,21 @@ public class CardController extends HttpServlet {
         }
         
         
+    }
+
+    private void delete(HttpServletRequest request, HttpServletResponse response) {
+        // get id product muon xoa
+        int id = Integer.parseInt(request.getParameter("id"));
+        HttpSession session = request.getSession();
+        Order cart = (Order) session.getAttribute("cart");
+        OrderDetails od = null;
+        for (OrderDetails obj : cart.getListOrderDetails()) {
+                if(obj.getProductId() == id){
+                    od = obj;
+                }
+            }
+        cart.getListOrderDetails().remove(od);
+        session.setAttribute("cart", cart);
     }
 
 }
