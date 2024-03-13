@@ -37,13 +37,14 @@
                             <!--Nguoi dung-->
                             <c:if test="${account.roleId == 2}">
                                 <li>
-                                    <a href="${pageContext.request.contextPath}/dashboard">My Account</a>
+                                    <a href="${pageContext.request.contextPath}/myaccount">My Account</a>
                                 </li>
                             </c:if>
                             <!--Admin-->
                             <c:if test="${account.roleId == 1}">
                                 <li>
-                                    <a href="${pageContext.request.contextPath}/admin/dashboard">My Account</a>
+                                    <!-- ${pageContext.request.contextPath}/admin/dashboard -->
+                                    <a href="${pageContext.request.contextPath}/myaccount">My Account</a>
                                 </li>
                             </c:if>
                         </c:if>

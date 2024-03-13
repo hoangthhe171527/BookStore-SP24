@@ -39,7 +39,7 @@ public class AccountDAO extends GenericDAO<Account> {
         parameterMap.put("password", t.getPassword());
         parameterMap.put("email", t.getEmail());
         parameterMap.put("address", t.getAddress());
-        
+
         return insertGenericDAO(sql, parameterMap);
     }
 
@@ -64,6 +64,34 @@ public class AccountDAO extends GenericDAO<Account> {
         return !queryGenericDAO(Account.class,
                 sql,
                 parameterMap).isEmpty();
+    }
+
+    public Account findById(int id) {
+
+        String sql = "SELECT * FROM [dbo].[Account] WHERE id = ?";
+        parameterMap = new LinkedHashMap<>();
+        parameterMap.put("id", id);
+
+        List<Account> list = queryGenericDAO(Account.class, sql, parameterMap);
+        return list.isEmpty() ? null : list.get(0);
+    }
+
+    public boolean updateById(int id, String name, String email, String address, String newPassword) {
+        String sql = "UPDATE [dbo].[Account]\n"
+                + "   SET [username] = ?,\n"
+                + "       [email] = ?,\n"
+                + "       [address] = ?,\n"
+                + "       [password] = ?\n"
+                + " WHERE [id] = ?";
+
+        parameterMap = new LinkedHashMap<>();
+        parameterMap.put("username", name);
+        parameterMap.put("email", email);
+        parameterMap.put("address", address);
+        parameterMap.put("password", newPassword);
+        parameterMap.put("id", id);
+
+        return updateGenericDAO(sql, parameterMap);
     }
 
 }

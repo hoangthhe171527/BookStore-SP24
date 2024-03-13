@@ -59,6 +59,9 @@ body {
     height: 100%;
 }
 
+
+
+
 .floatleft {
     float: left;
 }
@@ -883,7 +886,7 @@ body {
 
 .menu-area ul li:before,
 .safe-area:before {
-    background: #f07c29 none repeat scroll 0 0;
+    background: #484848 none repeat scroll 0 0;
     bottom: 0;
     content: "";
     left: 0;

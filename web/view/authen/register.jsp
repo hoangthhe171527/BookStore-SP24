@@ -89,6 +89,12 @@
                                         <label>Password<span>*</span></label>
                                         <input type="password" placeholder="Password" name="password" />
                                         <br/>
+                                        <label>Email<span>*</span></label>
+                                        <input type="email" placeholder="Email" name="email" />
+                                        <br/>
+                                        <label>Address<span>*</span></label>
+                                        <input type="text" placeholder="Address" name="address" />
+                                        <br/>
                                         <span style="color:red">${error}</span>
                                 </form>
                             </div>

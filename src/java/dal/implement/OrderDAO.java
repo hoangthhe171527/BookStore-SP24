@@ -17,7 +17,7 @@ public class OrderDAO extends GenericDAO<Order> {
 
     @Override
     public List<Order> findAll() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return queryGenericDAO(Order.class);
     }
 
     @Override

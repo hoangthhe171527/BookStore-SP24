@@ -6,7 +6,7 @@
 <footer class="sticky-footer">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
-            <span>Copyright © Your Website 2019</span>
+            <span>HONAG WITH LOVE</span>
         </div>
     </div>
 </footer>

@@ -137,7 +137,7 @@
                             </div>
                             <div class="banner-area mb-30">
                                 <div class="banner-img-2">
-                                    <a href="#"><img src="${pageContext.request.contextPath}/img/banner/31.jpg" alt="banner" /></a>
+                                    <a href="#"><img src="${pageContext.request.contextPath}/img/banner/bannerbook.png" alt="banner" /></a>
                                 </div>
                             </div>
                             
@@ -146,7 +146,7 @@
                     <div class="col-lg-9 col-md-12 col-12 order-lg-2 order-1">
                         <!-- banner -->
                         <div class="category-image mb-30">
-                            <a href="#"><img src="${pageContext.request.contextPath}/img/banner/banner-2.png" alt="banner" /></a>
+                            <a href="#"><img src="${pageContext.request.contextPath}/img/banner/main.png" alt="banner" /></a>
                         </div>
                         <div class="section-title-5 mb-30">
                             <h2>Book</h2>

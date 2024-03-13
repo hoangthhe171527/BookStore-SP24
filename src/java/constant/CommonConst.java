@@ -13,5 +13,6 @@ public class CommonConst {
     public static final String SESSION_PRODUCT = "listProduct";
     public static final String SESSION_CATEGORY = "listCategory";
     public static final String SESSION_CATEGORYDETAILS = "listCateDetail";
+    public static final String SESSION_ORDER = "listOrder";
     public static final String SESSION_ACCOUNT = "account";
 }

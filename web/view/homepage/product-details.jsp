@@ -104,14 +104,7 @@
                                                 <a href="#" onclick="return this.closest('form').submit();">Add to cart</a>
                                             </form>
                                         </div>
-                                        <div class="product-social-links">
-                                            <div class="product-addto-links">
-                                                <a href="#"><i class="fa fa-heart"></i></a>
-                                                <a href="#"><i class="fa fa-pie-chart"></i></a>
-                                                <a href="#"><i class="fa fa-envelope-o"></i></a>
-                                            </div>
-                                            
-                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>	
@@ -196,6 +189,7 @@
                             <div class="random-area mb-30">
                                 <div class="product-active-2 owl-carousel">
                                     <c:forEach items="${listProduct}" var="p">
+                                        <c:if test="${p.price > 10}" >
                                     <div class="product-total-2">
                                         
                                         <div class="single-most-product bd mb-18">
@@ -218,6 +212,7 @@
                                         </div>
                                         
                                     </div>
+                                        </c:if>
                                     </c:forEach>	
                                 </div>
                             </div>

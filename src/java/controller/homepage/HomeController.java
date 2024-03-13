@@ -7,9 +7,11 @@ package controller.homepage;
 import constant.CommonConst;
 import dal.implement.CateDetailsDAO;
 import dal.implement.CategoryDAO;
+import dal.implement.OrderDAO;
 import dal.implement.ProductDAO;
 import entity.CategoryDetails;
 import entity.Category;
+import entity.Order;
 import entity.PageControl;
 import entity.Product;
 import java.io.IOException;
@@ -25,6 +27,7 @@ public class HomeController extends HttpServlet {
     ProductDAO productDAO = new ProductDAO();
     CategoryDAO categoryDao = new CategoryDAO();
     CateDetailsDAO cateDetailsDAO = new CateDetailsDAO();
+    OrderDAO orderDAO = new OrderDAO();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -35,12 +38,15 @@ public class HomeController extends HttpServlet {
         List<Category> listCategory = categoryDao.findAll();
         //get list category details
         List<CategoryDetails> listCateDetail = cateDetailsDAO.findAll();
-
+        // get list order
+        List<Order> listOrder = orderDAO.findAll();
+        
         //set listProduct, listCategory to session
         HttpSession session = request.getSession();
         session.setAttribute(CommonConst.SESSION_PRODUCT, listProduct);
         session.setAttribute(CommonConst.SESSION_CATEGORY, listCategory);
         session.setAttribute(CommonConst.SESSION_CATEGORYDETAILS, listCateDetail);
+        session.setAttribute(CommonConst.SESSION_ORDER, listOrder);
         request.setAttribute("pageControl", pageControl);
 
 

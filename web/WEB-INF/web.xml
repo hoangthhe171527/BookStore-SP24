@@ -52,6 +52,18 @@
         <servlet-name>CardController</servlet-name>
         <servlet-class>controller.user.CardController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AccountController</servlet-name>
+        <servlet-class>controller.account.AccountController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AccountInformation</servlet-name>
+        <servlet-class>controller.account.AccountInformation</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AccountInformations</servlet-name>
+        <servlet-class>controller.account.AccountInformations</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeController</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -82,6 +94,18 @@
     <servlet-mapping>
         <servlet-name>CardController</servlet-name>
         <url-pattern>/payment</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AccountController</servlet-name>
+        <url-pattern>/myaccount</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AccountInformation</servlet-name>
+        <url-pattern>/account-info</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AccountInformations</servlet-name>
+        <url-pattern>/change-infomation</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

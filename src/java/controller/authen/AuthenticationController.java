@@ -117,10 +117,14 @@ public class AuthenticationController extends HttpServlet {
         // get ve thong tin nguoi dung nhap
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+        String email = request.getParameter("email");
+        String address = request.getParameter("address");
         // ktra xem user name ton tai trong db chua
         Account account = Account.builder()
                 .username(username)
                 .password(password)
+                .email(email)
+                .address(address)
                 .build();
         boolean isUsernameExist = accountDAO.checkUsernameExist(account);
         // true => quay tro lai trang register(set thong bao loi )
