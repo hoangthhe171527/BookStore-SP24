@@ -94,4 +94,33 @@ public class AccountDAO extends GenericDAO<Account> {
         return updateGenericDAO(sql, parameterMap);
     }
 
+    public void update(Account account) {
+        String sql = "UPDATE [dbo].[Account]\n"
+                + "   SET [username] = ?,\n"
+                + "       [email] = ?,\n"
+                + "       [address] = ?,\n"
+                + "       [password] = ?,\n"
+                + "       [roleId] = ?\n"
+                + " WHERE [id] = ?";
+
+        parameterMap = new LinkedHashMap<>();
+        parameterMap.put("username", account.getUsername());
+        parameterMap.put("email", account.getEmail());
+        parameterMap.put("address", account.getAddress());
+        parameterMap.put("password", account.getPassword());
+        parameterMap.put("roleId", account.getRoleId());
+        parameterMap.put("id", account.getId());
+
+        updateGenericDAO(sql, parameterMap);
+    }
+
+    public void deleteById(int id) {
+        String sql = "DELETE FROM [dbo].[Account] WHERE [id] = ?";
+
+        parameterMap = new LinkedHashMap<>();
+        parameterMap.put("id", id);
+
+        updateGenericDAO(sql, parameterMap);
+    }
+
 }

@@ -5,6 +5,7 @@
 package dal.implement;
 
 import dal.GenericDAO;
+import entity.Order;
 import entity.OrderDetails;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -37,4 +38,31 @@ public class OrderDetailsDAO extends GenericDAO<OrderDetails> {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
+    public List<OrderDetails> findByOrderId(int orderID) {
+        String sql = "SELECT *\n"
+                + "  FROM [BookStry].[dbo].[OrderDetails]\n"
+                + "  where orderId = ?";
+        parameterMap = new LinkedHashMap<>();
+        parameterMap.put("orderID", orderID);
+        return queryGenericDAO(OrderDetails.class, sql, parameterMap);
+    }
+    
+    
+    public static void main(String[] args) {
+        OrderDetailsDAO dao = new OrderDetailsDAO();
+        List<OrderDetails> list = dao.findByOrderId(1);
+
+        if (list.isEmpty()) {
+            System.out.println("No orders found.");
+        } else {
+            System.out.println("Orders found:");
+            for (OrderDetails order : list) {
+                System.out.println("getId ID: " + order.getId());
+                System.out.println("getOrderId: " + order.getOrderId());
+                System.out.println("getProductId ID: " + order.getProductId());
+                System.out.println("Quantity: " + order.getQuantity());
+                System.out.println();
+            }
+        }
+    }
 }

@@ -12,6 +12,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+
+
 /**
  *
  * @author Admin
@@ -30,4 +32,9 @@ public class Account {
     private String email;
     private String address;
     private int roleId;
+
+    public String getRoleName() {
+        return (roleId == 1) ? "admin" : "user";
+    }
+    
 }

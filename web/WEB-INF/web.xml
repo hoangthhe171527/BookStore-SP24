@@ -64,6 +64,30 @@
         <servlet-name>AccountInformations</servlet-name>
         <servlet-class>controller.account.AccountInformations</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>OrderServlet</servlet-name>
+        <servlet-class>controller.account.OrderServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ChartServlet</servlet-name>
+        <servlet-class>controller.admin.ChartServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewServlet</servlet-name>
+        <servlet-class>controller.user.ViewServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AccountControl</servlet-name>
+        <servlet-class>controller.admin.AccountControl</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AccServlet</servlet-name>
+        <servlet-class>controller.admin.AccServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AccountAdminServlet</servlet-name>
+        <servlet-class>controller.admin.AccountAdminServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeController</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -106,6 +130,26 @@
     <servlet-mapping>
         <servlet-name>AccountInformations</servlet-name>
         <url-pattern>/change-infomation</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OrderServlet</servlet-name>
+        <url-pattern>/order</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ChartServlet</servlet-name>
+        <url-pattern>/chart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewServlet</servlet-name>
+        <url-pattern>/viewDetails</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AccServlet</servlet-name>
+        <url-pattern>/admin/acc-control</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AccountAdminServlet</servlet-name>
+        <url-pattern>/account</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -60,7 +60,7 @@
                         <div class="card mb-3">
                             <div class="card-header">
                                 <i class="fas fa-table"></i>
-                                Data Table Example
+                                Lịch sử 
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -68,33 +68,19 @@
                                         <thead>
                                             <tr>
                                                 <th>Id</th>
-                                                <th width="10%">Name</th>
-                                                <th>Image</th>
-                                                <th>Price</th>
-                                                <th>Category</th>
-                                                <th>Description</th>
-                                                
+                                                <th>Total</th>
+                                                <th>Create At</th>
+                                                <th>Action</th>
+
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        <c:forEach items="${listProduct}" var="p">
+                                        <c:forEach items="${listOrder}" var="p">
                                             <tr>
-                                                <td name="id">${p.id}</td>
-                                                <td name="name">${p.name}</td>
-                                                <td name="image">
-                                                    <img src="${p.image}" width="100" height="100" alt="alt"/>
-                                                </td>
-                                                <td name="quantity">${p.quantity}</td>
-                                                
-                                                <td name="category">
-                                                    <c:forEach items="${listCategory}" var="c">
-                                                        <c:if test="${c.id == p.categoryId}">
-                                                            ${c.name}
-                                                        </c:if>
-                                                    </c:forEach>
-                                                </td>
-                                                <td name="description">${p.description}</td>
-                                               
+                                                <td >${p.id}</td>
+                                                <td >${p.amount}$</td>
+                                                <td >${p.createAt}</td>
+                                                <td><a href="viewDetails?id=${p.id}">View Details</a></td>  
                                             </tr>
                                         </c:forEach>
                                     </tbody>
@@ -123,7 +109,9 @@
 
 
             <!-- Bootstrap core JavaScript-->
-            <script src="${pageContext.request.contextPath}/vendor-admin/jquery/jquery.min.js"></script>
+
+
+        <script src="${pageContext.request.contextPath}/vendor-admin/jquery/jquery.min.js"></script>
         <script src="${pageContext.request.contextPath}/vendor-admin/bootstrap/js/bootstrap.bundle.min.js"></script>
 
         <!-- Core plugin JavaScript-->

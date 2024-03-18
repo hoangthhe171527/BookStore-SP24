@@ -53,10 +53,10 @@
                         <!-- Breadcrumbs-->
                     <jsp:include page="../common/admin/breadcrumbs.jsp"></jsp:include>
 
-                        <!-- Icon Cards-->
                         
-
-
+                        
+                        
+                        
 
                         <!-- DataTables Example -->
                         <div class="card mb-3">
@@ -173,7 +173,7 @@
         <script src="${pageContext.request.contextPath}/js/admin/colReorder-dataTables-min.js"></script>
         <script src="${pageContext.request.contextPath}/js/admin/colReorder-bootstrap4-min.js"></script>
 
-
+        
     </body>
 
 </html>
